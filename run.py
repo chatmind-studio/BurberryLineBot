@@ -14,7 +14,7 @@ async def main() -> None:
         raise RuntimeError("LINE_CHANNEL_SECRET and LINE_ACCESS_TOKEN are required.")
 
     bot = BurberryBot(channel_secret, access_token)
-    await bot.run()
+    await bot.run(port=7000)
 
 
 asyncio.run(main())
