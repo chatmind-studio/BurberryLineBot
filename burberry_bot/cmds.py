@@ -14,10 +14,6 @@ class Commands(Cog):
     def __init__(self, bot: Bot):
         super().__init__(bot)
         self.bot = bot
-        api_key = os.getenv("EXCHANGE_RATE_API_KEY")
-        if not api_key:
-            raise RuntimeError("EXCHANGE_RATE_API_KEY is required.")
-        self.api_key = api_key
 
     @command
     async def compare_price(self, ctx: Context, url: Optional[str] = None) -> Any:
