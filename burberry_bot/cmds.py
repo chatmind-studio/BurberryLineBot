@@ -1,4 +1,3 @@
-import os
 from typing import Any, Optional
 
 from dotenv import load_dotenv
