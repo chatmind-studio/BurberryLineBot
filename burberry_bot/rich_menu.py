@@ -14,13 +14,14 @@ RICH_MENU = RichMenuRequest(
     areas=[
         RichMenuArea(
             bounds=RichMenuBounds(x=400, y=0, width=800, height=405),
-            action=MessageAction(text="cmd=compare_price", label="台日比價"),
+            action=URIAction(
+                uri="https://tw.burberry.com/?openExternalBrowser=1",
+                label="Burberry 台灣官網",
+            ),
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=0, y=0, width=400, height=405),
-            action=URIAction(
-                uri="https://tw.burberry.com/?openExternalBrowser=1", label="台灣官網"
-            ),
+            action=MessageAction(text="cmd=compare_price", label="台日比價"),
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=0, y=405, width=400, height=405),
