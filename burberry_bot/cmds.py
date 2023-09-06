@@ -59,5 +59,5 @@ class Commands(Cog):
     @command
     async def help(self, ctx: Context) -> Any:
         await ctx.reply_text(
-            "1. 點擊「台灣官網」\n2. 搜尋你想要的商品\n3. 複製商品網址\n4. 點擊「台日比價」\n5. 貼上商品網址"
+            "1. 點擊「Burberry 台灣官網」\n2. 搜尋你想要的商品\n3. 複製商品網址\n4. 點擊「台日比價」\n5. 貼上商品網址"
         )
