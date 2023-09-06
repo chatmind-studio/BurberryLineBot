@@ -37,15 +37,14 @@ class Commands(Cog):
             )
             converted_jp_price = round(await convert_currency(jp_price))
             price_diff = tw_price - converted_jp_price
-            discount = converted_jp_price / tw_price * 100
+            discount = str(round(converted_jp_price / tw_price * 100)).replace("0", "")
+            text = f"台灣購買價格為 {tw_price} 台幣\n日本購買價格為 {jp_price} 日圓\n(約 {converted_jp_price} 台幣)"
             if price_diff > 0:
                 await ctx.reply_text(
-                    f"台灣購買價格為 {tw_price} 台幣\n日本購買價格為 {jp_price} 日圓\n(約 {converted_jp_price} 台幣)\n日本比台灣便宜 {price_diff} 台幣\n約打 {round(discount)} 折"
+                    f"{text}\n日本比台灣便宜 {price_diff} 台幣\n約打 {discount} 折"
                 )
             else:
-                await ctx.reply_text(
-                    f"台灣購買價格為 {tw_price} 台幣\n日本購買價格為 {jp_price} 日圓\n(約 {converted_jp_price} 台幣)\n台灣比日本便宜 {-price_diff} 台幣\n建議在台灣購買!"
-                )
+                await ctx.reply_text(f"{text}\n台灣比日本便宜 {-price_diff} 台幣\n建議在台灣購買!")
 
     @command
     async def steps(self, ctx: Context) -> Any:
