@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from burberry_bot.bot import BurberryBot
 
 port = argparse.ArgumentParser()
-port.add_argument("--port", type=int, default=7000)
+port.add_argument("--port", type=int, default=7010)
 args = port.parse_args()
 
 
