@@ -29,7 +29,7 @@ class Commands(Cog):
                     )
                 ],
             )
-            await ctx.reply_template("台日比價", template)
+            await ctx.reply_template("台日比價", template=template)
         else:
             tw_price = await get_item_price(url)
             jp_price = await get_item_price(
