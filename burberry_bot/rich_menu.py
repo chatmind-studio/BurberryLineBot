@@ -1,4 +1,4 @@
-from line.models import MessageAction, URIAction
+from line.models import PostbackAction, URIAction
 from linebot.v3.messaging import (
     RichMenuArea,
     RichMenuBounds,
@@ -21,7 +21,7 @@ RICH_MENU = RichMenuRequest(
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=0, y=0, width=400, height=405),
-            action=MessageAction(text="cmd=compare_price", label="台日比價"),
+            action=PostbackAction(data="cmd=compare_price", label="台日比價"),
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=0, y=405, width=400, height=405),
@@ -31,11 +31,11 @@ RICH_MENU = RichMenuRequest(
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=400, y=405, width=400, height=405),
-            action=MessageAction(text="cmd=help", label="使用說明"),
+            action=PostbackAction(data="cmd=help", label="使用說明"),
         ),
         RichMenuArea(
             bounds=RichMenuBounds(x=800, y=405, width=400, height=405),
-            action=MessageAction(text="cmd=steps", label="代購流程"),
+            action=PostbackAction(data="cmd=steps", label="代購流程"),
         ),
     ],
 )
